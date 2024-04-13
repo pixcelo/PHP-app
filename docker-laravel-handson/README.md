@@ -89,5 +89,18 @@ COPY ./php.ini /usr/local/etc/php/php.ini
 WORKDIR /data
 ```
 
+### コンテナに入る
+```bash
+docker compose exec app bash
+```
+
+### コンテナの情報を取得
+```bash
+php -v      # phpバージョン情報
+composer -v # composerバージョン情報
+php -m      # インストール済みの拡張機能の一覧
+```
+
+
 ## Reference
 - [【超入門】20分でLaravel開発環境を爆速構築するDockerハンズオン](https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4)
