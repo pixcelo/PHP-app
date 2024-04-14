@@ -1,6 +1,9 @@
 # PHP-app
 PHPに関する研究
 
+## VSCode設定
+拡張
+- [【PHP】VSCodeでPHP開発環境を整えてみよう(2020年夏)【おすすめ拡張機能】](https://iwasiman.hatenablog.com/entry/20200727-php-on-vscode)
 
 ## PHP
 - [php.net](https://www.php.net/)
@@ -25,3 +28,4 @@ PHPに関する研究
 - [php](https://hub.docker.com/_/php)
 - [composer](https://hub.docker.com/_/composer)
 - [phpmyadmin](https://hub.docker.com/_/phpmyadmin)
+- [MySQL](https://hub.docker.com/r/mysql/mysql-server)
