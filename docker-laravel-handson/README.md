@@ -248,5 +248,17 @@ default-character-set = utf8mb4  # MySQL clientで使うデフォルトの文字
 default-character-set = utf8mb4 # その他のクライアントで使うデフォルトの文字セットをutf8mb4に設定
 ```
 
+MySQL接続
+```bash
+mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
+```
+
+```bash
+> show databases;
+> show tables;
+> desc users;
+> SELECT * FROM users;
+```
+
 ## Reference
 - [【超入門】20分でLaravel開発環境を爆速構築するDockerハンズオン](https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4)
