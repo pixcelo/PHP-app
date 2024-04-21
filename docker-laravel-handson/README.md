@@ -267,12 +267,84 @@ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
 composer require barryvdh/laravel-debugbar --dev
 ```
 
-
 ## Laravelの設定の変更が反映されないとき
 ```bash
 php artisan config:clear
 php artisan cache:clear
 ```
+
+## モデル作成
+```bash
+php artisan make:model {model_name}
+```
+
+`php artisan make:model Test`と入力した場合、`app/Models/Test.php`が作成される
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Test extends Model
+{
+    use HasFactory;
+}
+```
+コントローラーとマイグレーションも同時生成する場合
+```bash
+php artisan make:model Test -mc
+```
+
+## マイグレーション
+`databases/migrations`<br/>
+ファイル作成
+```bash
+php artisan make:migration create_tests_table
+php artisan migrate // DBに反映
+```
+
+```bash
+php artisan migrate:fresh   // テーブルを全て削除して再生成
+php artisan migrate:refresh // ロールバックして再生成
+```
+
+## コントローラー作成
+```bash
+php artisan make:controller {contoller_name}
+```
+`php artisan make:controller TestController`と入力した場合、`app/Http/Controllers/TestController.php`が作成される
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TestController extends Controller
+{
+    //
+}
+```
+
+## ルーティング
+### ルーティング設定
+`routes/web.php`
+```php
+use App\Http\Controllers\TestController; // ファイル内で使えるようにする
+Route::get('tests/test', [TestController::class, 'index']);
+```
+### コントローラー設定
+`App/Http/Controller/TestController.php`
+```php
+public function index()
+{
+    return view('tests.test');  // view()は、Laravelのヘルパ関数（フォルダ名.ファイル名で書く）
+}
+```
+### View設定
+`resouces/views/tests/test.blade.php`
 
 ## Reference
 - [【超入門】20分でLaravel開発環境を爆速構築するDockerハンズオン](https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4)
