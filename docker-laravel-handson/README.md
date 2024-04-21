@@ -346,6 +346,21 @@ public function index()
 ### View設定
 `resouces/views/tests/test.blade.php`
 
+## コントローラーでモデルを取得する
+`App/Http/Controller/TestController.php`
+```php
+use App\Models\Test;
+
+public function index()
+{
+    $models = Test::all(); // 全件取得
+    
+    dd($models); // die + var_dump 処理を止めて内容を確認できる
+
+    return view('tests.test', compact($models));
+}
+```
+
 ## Reference
 - [【超入門】20分でLaravel開発環境を爆速構築するDockerハンズオン](https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4)
 - [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
