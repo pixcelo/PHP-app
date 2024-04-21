@@ -261,10 +261,12 @@ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
 ```
 
 ## laravel-debugbar
-デバッグを便利にしてくれるライブラリ
+デバッグを便利にしてくれるライブラリ<br/>
+`.env`の`APP_DEBUG=true`のときに表示される
 ```bash
 composer require barryvdh/laravel-debugbar --dev
 ```
+
 
 ## Laravelの設定の変更が反映されないとき
 ```bash
