@@ -260,5 +260,18 @@ mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
 > SELECT * FROM users;
 ```
 
+## laravel-debugbar
+デバッグを便利にしてくれるライブラリ
+```bash
+composer require barryvdh/laravel-debugbar --dev
+```
+
+## Laravelの設定の変更が反映されないとき
+```bash
+php artisan config:clear
+php artisan cache:clear
+```
+
 ## Reference
 - [【超入門】20分でLaravel開発環境を爆速構築するDockerハンズオン](https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4)
+- [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
