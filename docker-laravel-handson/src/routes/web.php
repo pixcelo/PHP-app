@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', [TestController::class, 'index']);
+Route::resource('goals', GoalController::class);
+Route::resource('actions', ActionController::class);

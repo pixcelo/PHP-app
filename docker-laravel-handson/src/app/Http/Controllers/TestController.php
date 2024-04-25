@@ -9,7 +9,8 @@ class TestController extends Controller
 {
     public function index()
     {
-        $models = Test::all(); // 全件取得
+        // エロクアント
+        $models = Test::all(); // 全件取得（コレクション型）
         
         // dd($models); // die + var_dump 処理を止めて内容を確認できる
         
