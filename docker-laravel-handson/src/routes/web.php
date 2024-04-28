@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\GoalController;
+use App\Http\Controllers\ActionController;
+use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +23,12 @@ Route::get('/', function () {
 
 Route::get('tests/test', [TestController::class, 'index']);
 Route::resource('goals', GoalController::class);
-Route::resource('actions', ActionController::class);
+Route::resource('actions', ActionController::class); 
+
+// ルーティングのグループ化
+Route::prefix('contact')->middleware(['auth'])
+->controller(ContactFormController::class)
+->name('cpntacts.')
+->group(function() {
+    Route::get('/', 'index')->name('index');
+});
