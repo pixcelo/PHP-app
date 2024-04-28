@@ -94,6 +94,12 @@ WORKDIR /data
 docker compose exec app bash
 ```
 
+環境の確認
+```
+root@8084259ef20d:/data# cat /etc/issue
+Debian GNU/Linux 10 \n \l
+```
+
 ### コンテナの情報を取得
 ```bash
 php -v      # phpバージョン情報
