@@ -5,6 +5,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\ActionController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,11 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', [TestController::class, 'index']);
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
 Route::resource('goals', GoalController::class);
-Route::resource('actions', ActionController::class); 
+Route::resource('actions', ActionController::class);
 
 // ルーティングのグループ化
 Route::prefix('contact')->middleware(['auth'])
