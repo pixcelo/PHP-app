@@ -16,7 +16,7 @@ phpmyadmin_test    phpmyadmin/phpmyadmin:latest   "/docker-entrypoint.…"   php
 laravelインストール
 ```bash
 $ docker compose exec php bash
-$ composer create-project "laravel/laravel=9.*" LaravelTestProject
+$ composer create-project "laravel/laravel=9.*" LaravelTestProject --prefer-dist
 ```
 
 ## 調べること
